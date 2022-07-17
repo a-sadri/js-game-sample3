@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'Ibarra Real Nova';
+	src: url('../public/fonts/IbarraRealNova-Bold.ttf') format('truetype'),
+		url('../public/fonts/IbarraRealNova-Italic.ttf') format('truetype'),
+		url('../public/fonts/IbarraRealNova-Medium.ttf') format('truetype'),
+		url('../public/fonts/IbarraRealNova-Regular.ttf') format('truetype');
+}
