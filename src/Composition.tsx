@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import audio from '../public/assets/Background.wav';
 import './Composition.css';
 import {FirstSequence} from './FirstSequence';
+import {SecondSequense} from './SecondSequence';
 
 export const MyComposition = () => {
 	return (
@@ -15,21 +16,14 @@ export const MyComposition = () => {
 			<AbsoluteFill
 				style={{color: 'red', fontSize: '7rem', fontFamily: 'Ibarra Real Nova'}}
 			>
-				<Sequence from={0} durationInFrames={100}>
+				<Sequence from={0} durationInFrames={110}>
 					<FirstSequence />
 				</Sequence>
+
 				<Sequence from={100} durationInFrames={150}>
-					<SecondSequence
-						animate={{scale: [0, 1]}}
-						transition={{type: 'spring', duration: 0.5}}
-					>
-						<Video
-							muted
-							src={staticFile(`input_data/footage/${data.footage[1]}`)}
-							style={{height: 1080, width: 1920}}
-						/>
-					</SecondSequence>
+					<SecondSequense />
 				</Sequence>
+
 				<Sequence from={220} durationInFrames={100}>
 					<ThiredSequence
 						initial={{x: '-150px'}}
@@ -62,7 +56,6 @@ export const MyComposition = () => {
 	);
 };
 
-const SecondSequence = styled(motion.div)``;
 const ThiredSequence = styled(motion.div)``;
 const ForthSequence = styled(motion.div)``;
 
