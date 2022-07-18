@@ -2,6 +2,7 @@ import {AbsoluteFill, Audio, Sequence, staticFile, Video} from 'remotion';
 
 import {FirstSequence} from './first_sequence/FirstSequence';
 import {SecondSequense} from './second_sequence/SecondSequence';
+import {ThirdSequense} from './third_sequence/ThirdSequence';
 
 // Get config data from constants
 import {DATA} from './constants';
@@ -16,7 +17,11 @@ export const MyComposition = () => {
 	return (
 		<>
 			<AbsoluteFill
-				style={{color: 'red', fontSize: '7rem', fontFamily: 'Ibarra Real Nova'}}
+				style={{
+					color: '#fff',
+					fontSize: '7rem',
+					fontFamily: 'Ibarra Real Nova',
+				}}
 			>
 				<Sequence from={0} durationInFrames={110}>
 					<FirstSequence />
@@ -27,17 +32,7 @@ export const MyComposition = () => {
 				</Sequence>
 
 				<Sequence from={230} durationInFrames={100}>
-					<ThiredSequence
-						initial={{x: '-150px'}}
-						animate={{x: 0}}
-						transition={{duration: 0.6}}
-					>
-						<Video
-							muted
-							src={staticFile(`input_data/footage/${DATA.footage[3]}`)}
-							style={{height: 1080, width: 1920}}
-						/>
-					</ThiredSequence>
+					<ThirdSequense />
 				</Sequence>
 				<Sequence from={320} durationInFrames={100}>
 					<ForthSequence>

@@ -20,7 +20,7 @@ export const Campaign: React.FC = () => {
 	});
 
 	// Define transform animation primitive for all 3 title
-	const titleProgress = spring({
+	const firstTitleProgress = spring({
 		frame: frame - 10,
 		fps,
 		config: {
@@ -29,7 +29,7 @@ export const Campaign: React.FC = () => {
 	});
 
 	// Define transform animation primitive for all 3 title
-	const stitleProgress = spring({
+	const secondTitleProgress = spring({
 		frame: frame - 20,
 		fps,
 		config: {
@@ -38,7 +38,7 @@ export const Campaign: React.FC = () => {
 	});
 
 	// Define transform animation primitive for all 3 title
-	const sstitleProgress = spring({
+	const thirdTitleProgress = spring({
 		frame: frame - 30,
 		fps,
 		config: {
@@ -52,9 +52,9 @@ export const Campaign: React.FC = () => {
 	const opacity = interpolate(scaleProgress, [0, 1], [0, 1]);
 
 	// Set range of value for transform property to animate
-	const first = interpolate(titleProgress, [0, 1], [800, 0]);
-	const second = interpolate(stitleProgress, [0, 1], [800, 0]);
-	const third = interpolate(sstitleProgress, [0, 1], [800, 0]);
+	const first = interpolate(firstTitleProgress, [0, 1], [800, 0]);
+	const second = interpolate(secondTitleProgress, [0, 1], [800, 0]);
+	const third = interpolate(thirdTitleProgress, [0, 1], [800, 0]);
 
 	return (
 		<div

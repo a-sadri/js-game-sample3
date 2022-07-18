@@ -21,7 +21,7 @@ export const Upload: React.FC = () => {
 
 	// Define transform animation primitive for all 3 title
 	const titleProgress = spring({
-		frame: frame - 30,
+		frame: frame - 15,
 		fps,
 		config: {
 			damping: 200,
