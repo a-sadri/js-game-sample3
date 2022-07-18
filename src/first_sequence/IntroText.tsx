@@ -5,9 +5,9 @@ import {
 	useVideoConfig,
 	spring,
 } from 'remotion';
-import {VideoLogo} from './VideoLogo';
+import {VideoLogo} from './VideoIcon';
 
-import {DATA} from './constants';
+import {DATA} from '../constants';
 
 const firstTitleStyle = {
 	display: 'flex',

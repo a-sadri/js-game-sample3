@@ -1,4 +1,29 @@
-export const Upload: React.FC = () => {
+import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+
+export const UploadIcon: React.FC = () => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+
+	// Define scale animation primitive and also it works for opacity animation over time
+	const scaleProgress = spring({
+		frame,
+		fps,
+	});
+
+	// Define transform animation primitive
+	const moveProgress = spring({
+		frame: frame - 10,
+		fps,
+		config: {
+			damping: 200,
+		},
+	});
+
+	// Set range of value for scale transform property to animate
+	const scale = interpolate(scaleProgress, [0, 1], [2, 1]);
+	// Set range of value for transform in x axis property to animate
+	const move = interpolate(moveProgress, [0, 1], [-200, 0]);
+
 	return (
 		<svg
 			version="1.1"
@@ -8,7 +33,9 @@ export const Upload: React.FC = () => {
 			viewBox="0 0 312.602 312.602"
 			style={{
 				enableBackground: 'new 0 0 312.602 312.602',
-				width: '450px',
+				width: '350px',
+				opacity: scaleProgress,
+				transform: `scale(${scale}) translateX(${move}px)`,
 			}}
 			xmlSpace="preserve"
 		>

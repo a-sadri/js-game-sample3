@@ -1,7 +1,7 @@
 import {staticFile, Video, interpolate, useCurrentFrame} from 'remotion';
 import {IntroText} from './IntroText';
 
-import {DATA} from './constants';
+import {DATA} from '../constants';
 
 export const FirstSequence = () => {
 	const frame = useCurrentFrame();

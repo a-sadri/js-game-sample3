@@ -1,15 +1,17 @@
 import {AbsoluteFill, Audio, Sequence, staticFile, Video} from 'remotion';
-import {Title} from './Title';
-import data from '../public/input_data/config.json';
 
+import {FirstSequence} from './first_sequence/FirstSequence';
+import {SecondSequense} from './second_sequence/SecondSequence';
+
+// Get config data from constants
+import {DATA} from './constants';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 
 import audio from '../public/assets/Background.wav';
 import './Composition.css';
-import {FirstSequence} from './FirstSequence';
-import {SecondSequense} from './SecondSequence';
 
+// This composition has 4 sections as sequences ordered based on total frame numbers
 export const MyComposition = () => {
 	return (
 		<>
@@ -32,7 +34,7 @@ export const MyComposition = () => {
 					>
 						<Video
 							muted
-							src={staticFile(`input_data/footage/${data.footage[3]}`)}
+							src={staticFile(`input_data/footage/${DATA.footage[3]}`)}
 							style={{height: 1080, width: 1920}}
 						/>
 					</ThiredSequence>
@@ -41,7 +43,7 @@ export const MyComposition = () => {
 					<ForthSequence>
 						<Video
 							muted
-							src={staticFile(`input_data/footage/${data.footage[4]}`)}
+							src={staticFile(`input_data/footage/${DATA.footage[4]}`)}
 							style={{height: 1080, width: 1920}}
 						/>
 					</ForthSequence>
@@ -58,5 +60,3 @@ export const MyComposition = () => {
 
 const ThiredSequence = styled(motion.div)``;
 const ForthSequence = styled(motion.div)``;
-
-const TitleAnim = styled(motion.div)``;
