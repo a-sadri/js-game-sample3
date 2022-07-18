@@ -5,9 +5,7 @@ import {
 	useVideoConfig,
 	spring,
 } from 'remotion';
-import {VideoLogo} from './VideoIcon';
-
-import {DATA} from '../constants';
+import {VideoIcon} from './VideoIcon';
 
 const firstTitleStyle = {
 	display: 'flex',
@@ -19,7 +17,6 @@ const firstTitleStyle = {
 	color: 'white',
 	fontFamily: 'Ibarra Real Nova',
 	width: '100%',
-	height: '100%',
 };
 
 const secondTitleStyle = {
@@ -34,7 +31,7 @@ const secondTitleStyle = {
 
 export const IntroText: React.FC = ({text}) => {
 	const frame = useCurrentFrame();
-	const {width, height, fps} = useVideoConfig();
+	const {fps} = useVideoConfig();
 
 	const firstTitleScaleProgress = spring({
 		frame,
@@ -85,7 +82,7 @@ export const IntroText: React.FC = ({text}) => {
 						marginTop: '100px',
 					}}
 				>
-					<VideoLogo />
+					<VideoIcon />
 				</div>
 
 				<h1

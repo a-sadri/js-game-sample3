@@ -1,15 +1,10 @@
-import {AbsoluteFill, Audio, Sequence, staticFile, Video} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
 
 import {FirstSequence} from './first_sequence/FirstSequence';
 import {SecondSequense} from './second_sequence/SecondSequence';
 import {ThirdSequense} from './third_sequence/ThirdSequence';
+import {ForthSequence} from './forth_sequence/ForthSequence';
 
-// Get config data from constants
-import {DATA} from './constants';
-import {motion} from 'framer-motion';
-import styled from 'styled-components';
-
-import audio from '../public/assets/Background.wav';
 import './Composition.css';
 
 // This composition has 4 sections as sequences ordered based on total frame numbers
@@ -34,24 +29,12 @@ export const MyComposition = () => {
 				<Sequence from={230} durationInFrames={100}>
 					<ThirdSequense />
 				</Sequence>
-				<Sequence from={320} durationInFrames={100}>
-					<ForthSequence>
-						<Video
-							muted
-							src={staticFile(`input_data/footage/${DATA.footage[4]}`)}
-							style={{height: 1080, width: 1920}}
-						/>
-					</ForthSequence>
+
+				<Sequence from={320}>
+					<ForthSequence />
 				</Sequence>
 			</AbsoluteFill>
-			<Audio
-				src={staticFile('assets/Background.wav')}
-				// StartFrom={59} // If composition is 30fps, then it will start at 2s
-				// endAt={120} // If composition is 30fps, then it will end at 4s
-			/>
+			<Audio src={staticFile('assets/Background.wav')} />
 		</>
 	);
 };
-
-const ThiredSequence = styled(motion.div)``;
-const ForthSequence = styled(motion.div)``;

@@ -1,6 +1,6 @@
 import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-export const VideoLogo: React.FC = () => {
+export const VideoIcon: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const progress = spring({

@@ -1,16 +1,16 @@
 import {staticFile, Video} from 'remotion';
+import {Ads} from './Ads';
 
-import {Variations} from './Variations';
 import {DATA} from '../constants';
 
-export const ThirdSequense: React.FC = () => {
+export const ForthSequence: React.FC = () => {
 	return (
 		<>
-			<Variations />
+			<Ads />
 
 			<Video
 				muted
-				src={staticFile(`input_data/footage/${DATA.footage[2]}`)}
+				src={staticFile(`input_data/footage/${DATA.footage[4]}`)}
 				style={{height: 1080, width: 1920}}
 			/>
 		</>
