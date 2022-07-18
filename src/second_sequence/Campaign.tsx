@@ -21,6 +21,24 @@ export const Campaign: React.FC = () => {
 
 	// Define transform animation primitive for all 3 title
 	const titleProgress = spring({
+		frame: frame - 10,
+		fps,
+		config: {
+			damping: 200,
+		},
+	});
+
+	// Define transform animation primitive for all 3 title
+	const stitleProgress = spring({
+		frame: frame - 20,
+		fps,
+		config: {
+			damping: 200,
+		},
+	});
+
+	// Define transform animation primitive for all 3 title
+	const sstitleProgress = spring({
 		frame: frame - 30,
 		fps,
 		config: {
@@ -29,14 +47,14 @@ export const Campaign: React.FC = () => {
 	});
 
 	// Set range of value for scale transform property to animate
-	const scale = interpolate(scaleProgress, [0, 1], [2, 1]);
+	const scale = interpolate(scaleProgress, [0, 1], [0, 1]);
 	// Set range of value for opacity property to animate
 	const opacity = interpolate(scaleProgress, [0, 1], [0, 1]);
 
 	// Set range of value for transform property to animate
-	const first = interpolate(titleProgress, [0, 1], [100, 0]);
-	const second = interpolate(titleProgress, [0, 1], [200, 0]);
-	const third = interpolate(titleProgress, [0, 1], [300, 0]);
+	const first = interpolate(titleProgress, [0, 1], [800, 0]);
+	const second = interpolate(stitleProgress, [0, 1], [800, 0]);
+	const third = interpolate(sstitleProgress, [0, 1], [800, 0]);
 
 	return (
 		<div
@@ -67,7 +85,7 @@ export const Campaign: React.FC = () => {
 				<span
 					style={{
 						fontWeight: 'bold',
-						fontSize: 60,
+						fontSize: 55,
 						color: 'white',
 						fontFamily: 'Ibarra Real Nova',
 						flex: '50%',
@@ -76,7 +94,7 @@ export const Campaign: React.FC = () => {
 					<h1
 						style={{
 							opacity,
-							transform: `translateX(${first}px) scale(${scale})`,
+							transform: `translateY(${first}px) scale(${scale})`,
 						}}
 					>
 						{words[0]}
@@ -84,7 +102,7 @@ export const Campaign: React.FC = () => {
 					<h1
 						style={{
 							opacity,
-							transform: `translateX(${second}px) scale(${scale})`,
+							transform: `translateY(${second}px) scale(${scale})`,
 						}}
 					>
 						{words[1]}
@@ -92,7 +110,7 @@ export const Campaign: React.FC = () => {
 					<h1
 						style={{
 							opacity,
-							transform: `translateX(${third}px) scale(${scale})`,
+							transform: `translateY(${third}px) scale(${scale})`,
 						}}
 					>
 						{words[2]}

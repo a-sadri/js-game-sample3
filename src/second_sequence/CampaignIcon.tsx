@@ -35,7 +35,7 @@ export const CampaignIcon: React.FC = () => {
 			viewBox="0 0 32 32"
 			style={{
 				enableBackground: 'new 0 0 32 32',
-				width: '450px',
+				width: '460px',
 				opacity,
 				transform: ` translateY(${move}px)`,
 			}}

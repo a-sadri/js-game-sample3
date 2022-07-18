@@ -1,28 +1,18 @@
 import {Sequence} from 'remotion';
-import {
-	useVideoConfig,
-	useCurrentFrame,
-	interpolate,
-	spring,
-	staticFile,
-	Video,
-} from 'remotion';
+import {staticFile, Video} from 'remotion';
 
 import {Upload} from './Upload';
 import {Campaign} from './Campaign';
 import {DATA} from '../constants';
 
 export const SecondSequense: React.FC = () => {
-	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-
 	return (
 		<>
 			<Sequence from={0} durationInFrames={60}>
 				<Upload />
 			</Sequence>
 
-			<Sequence from={60} durationInFrames={60}>
+			<Sequence from={60} durationInFrames={80}>
 				<Campaign />
 			</Sequence>
 

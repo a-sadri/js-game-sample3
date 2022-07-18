@@ -22,11 +22,11 @@ export const MyComposition = () => {
 					<FirstSequence />
 				</Sequence>
 
-				<Sequence from={100} durationInFrames={150}>
+				<Sequence from={100} durationInFrames={140}>
 					<SecondSequense />
 				</Sequence>
 
-				<Sequence from={220} durationInFrames={100}>
+				<Sequence from={230} durationInFrames={100}>
 					<ThiredSequence
 						initial={{x: '-150px'}}
 						animate={{x: 0}}
@@ -39,7 +39,7 @@ export const MyComposition = () => {
 						/>
 					</ThiredSequence>
 				</Sequence>
-				<Sequence from={300} durationInFrames={100}>
+				<Sequence from={320} durationInFrames={100}>
 					<ForthSequence>
 						<Video
 							muted
