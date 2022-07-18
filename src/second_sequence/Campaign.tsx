@@ -19,7 +19,7 @@ export const Campaign: React.FC = () => {
 		},
 	});
 
-	// Define transform animation primitive for all 3 title
+	// Define transform animation primitive for first title
 	const firstTitleProgress = spring({
 		frame: frame - 10,
 		fps,
@@ -28,7 +28,7 @@ export const Campaign: React.FC = () => {
 		},
 	});
 
-	// Define transform animation primitive for all 3 title
+	// Define transform animation primitive for second title
 	const secondTitleProgress = spring({
 		frame: frame - 20,
 		fps,
@@ -37,7 +37,7 @@ export const Campaign: React.FC = () => {
 		},
 	});
 
-	// Define transform animation primitive for all 3 title
+	// Define transform animation primitive for third title
 	const thirdTitleProgress = spring({
 		frame: frame - 30,
 		fps,

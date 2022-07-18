@@ -33,12 +33,14 @@ export const IntroText: React.FC = ({text}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
+	// Define transform animation primitive for first title of the video
 	const firstTitleScaleProgress = spring({
 		frame,
 		fps,
 		durationInFrames: 240,
 	});
 
+	// Define transform animation primitive for second title of the video
 	const secondTitleScaleProgress = spring({
 		frame: frame - 50,
 		fps,
@@ -47,9 +49,11 @@ export const IntroText: React.FC = ({text}) => {
 		},
 	});
 
+	// Set range of value for scale property to animate
 	const first = interpolate(firstTitleScaleProgress, [0, 1], [1, 1.3]);
 	const second = interpolate(secondTitleScaleProgress, [0, 1], [-300, 0]);
 
+	// Set range of value for opacity
 	const opacity = interpolate(frame, [0, 1], [0, 1]);
 
 	// Convert main text to array for separate words
